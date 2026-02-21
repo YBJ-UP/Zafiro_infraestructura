@@ -1,0 +1,22 @@
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bd_zafiro
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER_ADMIN}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_ADMIN}
+      POSTGRES_DB: ${POSTGRES_DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      
+volumes:
+  postgres_data:
