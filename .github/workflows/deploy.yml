@@ -15,8 +15,8 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd ~/Zafiro_infraestructura  # Cambia esto por la ruta real en tu AWS
