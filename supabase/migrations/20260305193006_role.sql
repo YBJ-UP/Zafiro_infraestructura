@@ -1,0 +1,12 @@
+DROP ROLE IF EXISTS app;
+
+CREATE ROLE app WITH 
+LOGIN 
+PASSWORD '12345678'
+NOSUPERUSER
+NOCREATEDB
+NOCREATEROLE
+INHERIT;
+
+GRANT USAGE ON SCHEMA public TO app;
+-- dar permiso para los reportes (cuando los haga)
