@@ -10,3 +10,4 @@ INHERIT;
 
 GRANT USAGE ON SCHEMA public TO app;
 -- dar permiso para los reportes (cuando los haga)
+--test 2
