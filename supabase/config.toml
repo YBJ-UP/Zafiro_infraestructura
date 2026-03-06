@@ -1,0 +1,44 @@
+# Configuración de Supabase para Zafiro
+# Este archivo se utiliza para el desarrollo local y la sincronización con Supabase
+
+# Project ID
+project_id = "bdbaagrjlsuibhvbzuwx"
+
+[db]
+# Port para desarrollo local
+port = 54322
+
+# Versión de PostgreSQL (debe coincidir con tu Docker)
+major_version = 16
+
+[db.pooler]
+enabled = true
+port = 54329
+
+[realtime]
+enabled = true
+port = 54321
+
+[studio]
+enabled = true
+port = 54323
+# URL del API (si usas Supabase localmente)
+api_url = "http://localhost"
+
+[auth]
+enabled = true
+port = 54324
+site_url = "http://localhost:3000"
+
+[storage]
+enabled = true
+port = 54325
+
+# Esta sección define qué migraciones y cambios aplicar
+[db.seed]
+# Los archivos SQL en db/ se aplican en orden
+enabled = true
+
+[api]
+enabled = true
+port = 54321
